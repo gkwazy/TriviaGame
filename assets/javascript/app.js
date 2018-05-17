@@ -1,9 +1,9 @@
-var countDown = 5;
+var countDown = 2;
 var usersChoice = [false, false, false, false];
 var numberCorrect = 0;
 var colorQuestion = new question("What is my favorite color?", "blue no yellow", "red", "purple", "black like my soul");
-var strongestAvenger = new question("Who is the strongest avenger?", "thor", "batman", "hulk", "thanos");
-var dna = new question("what does DNA stand for?", "Deoxyribonuleic acid", "Data numeric architecture", "dihydrogen nitirc acid", "Danina's nice aadvark")
+var strongestAvenger = new question("Who is the strongest avenger?", "hulk", "batman", "thor", "thanos");
+var dna = new question("What does DNA stand for?", "Deoxyribonuleic acid", "Data numeric architecture", "dihydrogen nitirc acid", "Danina's nice aadvark")
 var arrayOfQuestions = [colorQuestion, strongestAvenger, dna];
 var questionTheUserIsOn = arrayOfQuestions.length - 1;
 
@@ -26,6 +26,16 @@ $("#fourthAnswer").on("click", function () {
     buttonSelected(3)
 });
 
+$("#playAgain").on("click", function () {
+    console.log("yes it was clicked")
+    countDown = 2;
+    usersChoice = [false, false, false, false];
+    numberCorrect = 0;
+    questionTheUserIsOn = arrayOfQuestions.length - 1;
+    shuffleArray(arrayOfQuestions);
+    startRound(arrayOfQuestions[questionTheUserIsOn]);
+
+});
 
 function startRound(array) {
     console.log("round started")
@@ -52,19 +62,26 @@ function startRound(array) {
 }
 
 function endOfRound(array) {
-    for (var i = 0; i < array; i++) {
-        if (array[i][1] == true && usersChoice == true)
-            numberCorrect++;
-    }
-    if (questionTheUserIsOn >= 0) {
-        questionTheUserIsOn--;
-        countDown = 6;
-        startRound(arrayOfQuestions[questionTheUserIsOn]);
-    } else {
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-        })
 
+    console.log("this is the array" + array)
+    for (var i = 0; i < array.length; i++) {
+        console.log("array for numberCorrect " + array[i][1])
+        console.log("usersChoice " + usersChoice[i])
+        if (array[i][1] == true && usersChoice[i] == true) {
+            numberCorrect++;
+            console.log("number correct added " + numberCorrect)
+        }
+    }
+    usersChoice = [false, false, false, false];
+    if (questionTheUserIsOn > 0) {
+        questionTheUserIsOn--;
+        countDown = 2;
+        startRound(arrayOfQuestions[questionTheUserIsOn]);
+        console.log(questionTheUserIsOn)
+    } else {
+        document.getElementById("results").innerHTML = ("<p> You guessed " + numberCorrect + " out of "
+            + arrayOfQuestions.length + " correct! </p>");
+        $("#myModal").modal();
     }
 }
 
