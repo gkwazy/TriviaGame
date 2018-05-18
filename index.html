@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
 </head>
@@ -13,13 +15,15 @@
 <body>
     <div class="container">
         <h1 id="timer">20</h1>
-        <h2 id="theQuestion"></h2>
-        <h3 id="firstAnswer"></h3>
-        <h3 id="secondAnswer"></h3>
-        <h3 id="thirdAnswer"></h3>
-        <h3 id="fourthAnswer"></h3>
-        <h3 id="numberCorrect"></h3>
-
+        <h2 class="" id="theQuestion"></h2>
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <h3 class="border list-group-item myButton" id="firstAnswer"></h3>
+                <h3 class="border list-group-item myButton" id="secondAnswer"></h3>
+                <h3 class="border list-group-item myButton" id="thirdAnswer"></h3>
+                <h3 class="border list-group-item myButton" id="fourthAnswer"></h3>
+            </ul>
+        </div>
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
 
@@ -53,8 +57,7 @@
     crossorigin="anonymous "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
     crossorigin="anonymous "></script>
-<link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css " integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm "
-    crossorigin="anonymous ">
+
 <script src="assets/javascript/app.js "></script>
 
 </html>

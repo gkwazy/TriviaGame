@@ -1,4 +1,4 @@
-var countDown = 2;
+var countDown = 20;
 var usersChoice = [false, false, false, false];
 var numberCorrect = 0;
 var colorQuestion = new question("What is my favorite color?", "blue no yellow", "red", "purple", "black like my soul");
@@ -28,7 +28,7 @@ $("#fourthAnswer").on("click", function () {
 
 $("#playAgain").on("click", function () {
     console.log("yes it was clicked")
-    countDown = 2;
+    countDown = 21;
     usersChoice = [false, false, false, false];
     numberCorrect = 0;
     questionTheUserIsOn = arrayOfQuestions.length - 1;
@@ -75,7 +75,7 @@ function endOfRound(array) {
     usersChoice = [false, false, false, false];
     if (questionTheUserIsOn > 0) {
         questionTheUserIsOn--;
-        countDown = 2;
+        countDown = 21;
         startRound(arrayOfQuestions[questionTheUserIsOn]);
         console.log(questionTheUserIsOn)
     } else {
@@ -120,3 +120,8 @@ function shuffleArray(array) {
     }
 }
 
+// $(".bg-primary").on("mouseover", function (event) {
+//     event.preventDefault();
+//     console.log("hovered")
+//     $(this).css("background-color", "green !important")
+// })

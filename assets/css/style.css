@@ -1,0 +1,10 @@
+
+.myButton{
+    background-color:DodgerBlue
+}
+.myButton:hover{
+    background-color:MediumSeaGreen !important;
+   }
+body {
+    background-color:red;
+ }
