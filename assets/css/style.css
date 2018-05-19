@@ -6,5 +6,7 @@
     background-color:MediumSeaGreen !important;
    }
 body {
-    background-color:red;
+    background-image: url(https://c1.staticflickr.com/4/3766/10634997144_1a861bf9bb_b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
  }

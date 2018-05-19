@@ -7,9 +7,13 @@ var dna = new question("What does DNA stand for?", "Deoxyribonuleic acid", "Data
 var arrayOfQuestions = [colorQuestion, strongestAvenger, dna];
 var questionTheUserIsOn = arrayOfQuestions.length - 1;
 
-shuffleArray(arrayOfQuestions);
-startRound(arrayOfQuestions[questionTheUserIsOn]);
 
+$("#startButton").click(function () {
+    $("#startButton").hide();
+    $("#gameContent").show();
+    shuffleArray(arrayOfQuestions);
+    startRound(arrayOfQuestions[questionTheUserIsOn]);
+});
 $("#firstAnswer").on("click", function () {
     buttonSelected(0)
 });
@@ -120,8 +124,3 @@ function shuffleArray(array) {
     }
 }
 
-// $(".bg-primary").on("mouseover", function (event) {
-//     event.preventDefault();
-//     console.log("hovered")
-//     $(this).css("background-color", "green !important")
-// })
